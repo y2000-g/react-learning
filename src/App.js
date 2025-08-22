@@ -323,6 +323,8 @@ function App(props)
      }    
   }
 
+  console.log("Testing new branch")
+
   return(
     <div style={{backgroundColor:props.color}}>
       {/* <button onClick={()=>{handleClickTryme()}}>Try me:</button> */}
