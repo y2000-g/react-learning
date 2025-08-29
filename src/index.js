@@ -3,11 +3,28 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import {BrowserRouter, Routes, Route} from 'react-router-dom';
+import Login from './routeExample/Login';
+import Profile from './routeExample/Profile';
+import Signup from './routeExample/Signup';
+import Dashboard from './routeExample/Dashboard';
+import Navigation from './routeExample/Navigation';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   // <React.StrictMode>
-    <App color="pink" size="25" />
+    // <App color="pink" size="25" />
+    // BrowserRouter -> Routes -> Route (Multiple) -> Route(Multiple)
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Navigation/>}>
+        <Route index element={<Login/>}/>
+        <Route path="profile" index element={<Profile/>}/>
+        <Route path="signup"index element={<Signup/>}/>
+        <Route path="dashboard"index element={<Dashboard/>}/>
+        </Route>
+      </Routes>
+    </BrowserRouter>
   // </React.StrictMode>
 );
 
