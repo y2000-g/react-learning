@@ -9,22 +9,28 @@ import Profile from './routeExample/Profile';
 import Signup from './routeExample/Signup';
 import Dashboard from './routeExample/Dashboard';
 import Navigation from './routeExample/Navigation';
+import Main from './PropDriling/Main';
+import UseRef from './Hooks/UseRef';
+import UseReducer from './Hooks/UseReducer';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   // <React.StrictMode>
+  // <Main/>
+  // <UseRef/>
+  <UseReducer/>
     // <App color="pink" size="25" />
     // BrowserRouter -> Routes -> Route (Multiple) -> Route(Multiple)
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Navigation/>}>
-        <Route index element={<Login/>}/>
-        <Route path="profile" index element={<Profile/>}/>
-        <Route path="signup"index element={<Signup/>}/>
-        <Route path="dashboard"index element={<Dashboard/>}/>
-        </Route>
-      </Routes>
-    </BrowserRouter>
+    // <BrowserRouter>
+    //   <Routes>
+    //     <Route path="/" element={<Navigation/>}>
+    //     <Route index element={<Login/>}/>
+    //     <Route path="profile" index element={<Profile/>}/>
+    //     <Route path="signup"index element={<Signup/>}/>
+    //     <Route path="dashboard"index element={<Dashboard/>}/>
+    //     </Route>
+    //   </Routes>
+    // </BrowserRouter>
   // </React.StrictMode>
 );
 

@@ -1,6 +1,6 @@
 
 import './App.css';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import MyButton from './Components/MyButton';
 import MyComponent from './Components/MyComponent';
 import MyClassComponent from './Components/MyClassComponent';
@@ -8,6 +8,38 @@ import MyChildComponent from './Components/MyChildComponent';
 
 function App(props) 
 {
+  let [count, setCount] = useState(0)
+  let [count2, setCount2] = useState(0)
+
+  // Called, when Count is updated
+   useEffect(()=>{
+    setTimeout(() => {
+      // runs on every render -> True
+      console.log("This is from use effect timer")
+    }, 1000);
+  }, [count])
+
+  // called on first render and every re-render
+  // For Every render only = componentDidUpdate
+  // useEffect(()=>{
+  //   setTimeout(() => {
+  //     // runs on every render -> True
+  //     console.log("This is from use effect timer")
+  //   }, 1000);
+  // })
+
+  // For first render only = componentDidMount
+  // useEffect(()=>{
+  //   setTimeout(() => {
+  //     // runs on every render -> True
+  //     console.log("This is from use effect timer")
+  //   }, 1000);
+  // }, [])
+
+  // ->[] ->this will allow our component to give  callback  of mounting alone
+  // if you don't pass this -> [] -> on every render -> on every update of component
+
+
   console.log("Props: ", props)
   console.log("Hello React !!!")
   // let array = [1, 2, 3, 4, 5, 6, 7, 8]
@@ -326,6 +358,16 @@ function App(props)
   console.log("Testing new branch")
   console.log("Trying to test pull request")
 
+  let incrementCount = ()=>
+  {
+    setCount(count++);
+  }
+
+  let incrementCount2 = ()=>
+  {
+    setCount2(count2++);
+  }
+
   return(
     <div style={{backgroundColor:props.color}}>
       {/* <button onClick={()=>{handleClickTryme()}}>Try me:</button> */}
@@ -367,6 +409,12 @@ function App(props)
           <input type='submit' value='Sign up'/>
         </form>
       </fieldset>
+
+      <label>{"This is Count For re-render: "+count}</label><br/><br/>
+      <button onClick={incrementCount}>Increment Count</button><br/><br/>
+
+       <label>{"This is Count For re-render: "+count2}</label><br/><br/>
+      <button onClick={incrementCount2}>Increment count2</button>
     </div>
   );
 
