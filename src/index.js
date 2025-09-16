@@ -12,13 +12,19 @@ import Navigation from './routeExample/Navigation';
 import Main from './PropDriling/Main';
 import UseRef from './Hooks/UseRef';
 import UseReducer from './Hooks/UseReducer';
+import Memoization from './Hooks/Memoization';
+import UseMemo from './Hooks/UseMemo';
+import CustomHook from './Hooks/CustomHook';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   // <React.StrictMode>
   // <Main/>
   // <UseRef/>
-  <UseReducer/>
+  // <UseReducer/>
+  // <Memoization/>
+  // <UseMemo/>
+  <CustomHook/>
     // <App color="pink" size="25" />
     // BrowserRouter -> Routes -> Route (Multiple) -> Route(Multiple)
     // <BrowserRouter>
