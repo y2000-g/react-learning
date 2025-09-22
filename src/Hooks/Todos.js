@@ -1,6 +1,7 @@
 import { memo } from "react";
 
-const Todos = ({todos, addTodo})=>{
+const Todos = ({todos, addTodo})=>
+{
     console.log("Child Render");
     return (
         <>

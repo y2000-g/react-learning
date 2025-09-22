@@ -15,6 +15,9 @@ import UseReducer from './Hooks/UseReducer';
 import Memoization from './Hooks/Memoization';
 import UseMemo from './Hooks/UseMemo';
 import CustomHook from './Hooks/CustomHook';
+import ReduxExample from './Redux/ReduxExample';
+import { Provider } from 'react-redux';
+import store from './Redux/store';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -24,7 +27,11 @@ root.render(
   // <UseReducer/>
   // <Memoization/>
   // <UseMemo/>
-  <CustomHook/>
+  // <CustomHook/>
+  // <ReduxExample/>
+  <Provider store={store}>
+    <ReduxExample/>
+  </Provider>
     // <App color="pink" size="25" />
     // BrowserRouter -> Routes -> Route (Multiple) -> Route(Multiple)
     // <BrowserRouter>
